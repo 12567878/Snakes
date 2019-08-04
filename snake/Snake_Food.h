@@ -3,13 +3,13 @@
 class Snake_Food
 {
 public:
-	Snake_Food() {}
-	void setDirection(int a) {}
-	
+	Snake_Food() {};
+	void setDirection(Direction a);
+	void addNode(int x,int y);
+	void popNode(int x,int y);
 
 private:
 	Direction D;
-	std::vector<std::vector<int> > vec;//Òª¼Ó¿Õ¸ñ
-
+	list<Node> li;
 };
 

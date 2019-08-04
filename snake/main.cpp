@@ -3,6 +3,7 @@
 #include "Snake_Food.h"
 #include "Game.h"
 #include <conio.h>
+#include "Snake_Food.cpp"
 using namespace std;
 
 
@@ -20,9 +21,23 @@ int main()
 		
 		while (/*计时器*/) {
 			int ch;
-			if (_kbhit()) {
-				ch = _getch();
+			switch (ch)
+			{
+			case 0xE0:
+				switch (ch = _getch())
+				{
+				case 72:  game.s.setDirection(Direction::UP); break;
+				case 80:  game.s.setDirection(Direction::DOWN); break;
+				case 75:  game.s.setDirection(Direction::LEFT); break;
+				case 77:  game.s.setDirection(Direction::RIGHT); break;
+				default:
+					break;
+				}
+				break;
+			default:
+				break;
 			}
+			_sleep(0.1);
 		}
 						  
 

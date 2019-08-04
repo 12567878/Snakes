@@ -1,6 +1,7 @@
 #include "Game.h"
 #include "Snake_Food.h"
 #include <iostream>
+#include <vector>
 using namespace std;
 
 enum Level {
@@ -8,7 +9,12 @@ enum Level {
 	NORMAL,
 	HARD
 };
-Game::Game(int a) {
+
+Game::Game(int a) :s(),vec(25,vector<char>(40)){
+	setLevel(a);
+}
+
+void Game::setLevel(int a) {    //namespace记得带上
 	switch (a)
 	{
 	case 1:
