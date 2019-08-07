@@ -10,11 +10,11 @@ Food::Food() {
 }
 
 void Food::createFood() {
-	if (Food::s) {
+	if (s) {
 		srand((unsigned)time(NULL));
-		Food::s = false;
+		s = false;
 	}
-	Food::x = 1 + rand() % 23; //产生1-23之间整数
-	Food::y = 1 + rand() % 23;
+	x = 1 + rand() % 23; //产生1-23之间整数
+	y = 1 + rand() % 23;
 
 }

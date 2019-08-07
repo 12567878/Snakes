@@ -1,13 +1,8 @@
 #include "Snake.h"
-#include <list>
+#include <vector>
+
 
 using namespace std;
-enum Direction {
-	UP,
-	DOWN,
-	LEFT,
-	RIGHT
-};
 
 Node::Node(int x, int y) {
 	this->x = x;
@@ -31,7 +26,7 @@ void Snake::addNode(int x, int y) {
 	//通知game增加蛇
 	//生成食物
 	Node node=Node(x, y);
-	li.push_front(node);
+	li.insert(0,node);
 }
 
 Node Snake::pop_back() {   //记得Snake::
@@ -42,4 +37,27 @@ Node Snake::pop_back() {   //记得Snake::
 }
 Direction Snake::getDirection() {
 	return this->D;
+}
+void Snake::setOppoD() {
+	switch (D)
+	{
+	case UP:
+		D = DOWN;
+		break;
+	case DOWN:
+		D = UP;
+		break;
+	case LEFT:
+		D = RIGHT;
+		break;
+	case RIGHT:
+		D = LEFT;
+		break;
+	default:
+		break;
+	}
+}
+
+Node Snake::getSecond() {
+	return this->li[1];
 }

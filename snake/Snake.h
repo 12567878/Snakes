@@ -1,6 +1,14 @@
 #pragma once
 
-enum Direction;
+
+
+
+enum Direction {
+	UP,
+	DOWN,
+	LEFT,
+	RIGHT
+};
 
 class Node {
 public:
@@ -13,14 +21,15 @@ public:
 class Snake
 {
 public:
-	Snake() {};
+	Snake() ;
 	void setDirection(int a);
 	void addNode(int x,int y);
 	Node pop_back();
 	Direction getDirection();
-
+	void setOppoD();
+	Node getSecond();
 private:
 	Direction D;
-	list<Node> li;//改成vector
+	vector<Node> li;//改成vector
 };
 

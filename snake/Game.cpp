@@ -6,11 +6,7 @@
 #include "Food.h"
 using namespace std;
 
-enum Level {
-	EASY,
-	NORMAL,
-	HARD
-};
+
 
 Game::Game(int a) :s(),vec(25,vector<char>(25,' ')){         //pass
 	setLevel(a);
@@ -65,9 +61,13 @@ void Game::print(Game& g) {               //pass
  }
 
  void Game::createFood() {
-	 
+	 Food a = Food();
 	 do { 
-		 Food::createFood(); 
-	 } while (this->vec[Food::x][Food::y] != 's');
-	 this->vec[Food::x][Food::y] = 'f';
+		 a.createFood(); 
+	 } while (this->vec[a.x][a.y] != 's');
+	 this->vec[a.x][a.y] = 'f';
+ }
+
+ char Game::hasWhat(int x,int y) {
+	 return this->vec[x][y];
  }

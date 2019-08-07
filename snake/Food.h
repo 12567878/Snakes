@@ -2,13 +2,11 @@
 class Food
 {
 public:
-	static int x;
-	static int y;
-	static bool s;
+	int x;
+	int y;
+	bool s;
 	Food();
-	static void createFood();
-private:
-
+	void createFood();
 
 };
 
